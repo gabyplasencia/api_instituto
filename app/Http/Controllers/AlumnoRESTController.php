@@ -13,14 +13,20 @@ class AlumnoRESTController extends Controller
      */
 
     //Esta es la URL http://127.0.0.1:8000/api/alumnos?nombre=jose usando GET
-    public function index(Request $request)
-    {   
-        $nombre = $request->input('nombre');
-        $alumno = Alumno::where('nombre', $nombre)->first();
-        return response()->json($alumno);
-        // return response()->json([
-        // 'foo' => 'bar',
-        // ]);
+    // public function index(Request $request)
+    // {   
+    //     $nombre = $request->input('nombre');
+    //     $alumno = Alumno::where('nombre', $nombre)->first();
+    //     return response()->json($alumno);
+    //     // return response()->json([
+    //     // 'foo' => 'bar',
+    //     // ]);
+    // }
+
+    //En la URL http://127.0.0.1:8000/api/alumnos con GET
+    public function index()
+    {
+        return AlumnoDTO::collection(Alumno::all());
     }
 
     /**
