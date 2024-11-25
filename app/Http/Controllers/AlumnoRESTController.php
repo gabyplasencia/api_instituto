@@ -12,7 +12,9 @@ class AlumnoRESTController extends Controller
      */
     public function index()
     {
-        //
+            return response()->json([
+            'foo' => 'bar',
+            ]);
     }
 
     /**
