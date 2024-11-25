@@ -10,11 +10,14 @@ class AlumnoRESTController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-            return response()->json([
-            'foo' => 'bar',
-            ]);
+    public function index(Request $request)
+    {   
+        $nombre = $request->input('nombre');
+        $alumno = Alumno::where('nombre', $nombre)->first();
+        return response()->json($alumno);
+        // return response()->json([
+        // 'foo' => 'bar',
+        // ]);
     }
 
     /**
