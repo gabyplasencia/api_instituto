@@ -17,7 +17,7 @@ class Matricula extends Model
      * @var array
      */
     protected $fillable = ['dni', 'year'];
-
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

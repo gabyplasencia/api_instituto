@@ -33,11 +33,12 @@ class Alumno extends Model
      * @var bool
      */
     public $incrementing = false;
+    public $timestamps = false;
 
     /**
      * @var array
      */
-    protected $fillable = ['nombre', 'apellidos', 'fechanacimiento'];
+    protected $fillable = ['dni', 'nombre', 'apellidos', 'fechanacimiento'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
