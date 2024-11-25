@@ -11,7 +11,7 @@ class AlumnoRESTController extends Controller
      * Display a listing of the resource.
      */
 
-     //Esta es la URL http://127.0.0.1:8000/api/alumnos?nombre=jose usando GET
+    //Esta es la URL http://127.0.0.1:8000/api/alumnos?nombre=jose usando GET
     public function index(Request $request)
     {   
         $nombre = $request->input('nombre');

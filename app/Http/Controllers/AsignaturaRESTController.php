@@ -11,9 +11,10 @@ class AsignaturaRESTController extends Controller
     /**
      * Display a listing of the resource.
      */
+    //En la URL http://127.0.0.1:8000/api/asignaturas con GET
     public function index()
     {
-        //
+        return AsignaturaDTO::collection(Asignatura::all());
     }
 
     /**
@@ -32,9 +33,10 @@ class AsignaturaRESTController extends Controller
     /**
      * Display the specified resource.
      */
+     // Esta es la URL http://127.0.0.1:8000/api/asignatura/18 usando GET
     public function show(Asignatura $asignatura)
     {
-        //
+        return response()->json($asignatura);
     }
 
     /**
@@ -50,7 +52,7 @@ class AsignaturaRESTController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    //En la URL http://127.0.0.1:8000/api/asignaturas/22 con PUT
+    //En la URL http://127.0.0.1:8000/api/asignaturas/22 con DELETE
     public function destroy(Asignatura $asignatura)
     {
         $asignatura->delete();
