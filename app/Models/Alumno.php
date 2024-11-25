@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -40,6 +41,18 @@ class Alumno extends Model
      */
     protected $fillable = ['dni', 'nombre', 'apellidos', 'fechanacimiento'];
 
+    protected $dates = [ 'fechanacimiento' ];
+
+    public function setFechaNacimientoAttribute( $value){
+        //esta función toma una string para guardar en la base de datos
+        $this->attributes['fechanacimiento'] = Carbon::parse($value)->getTimestampMs();
+    }
+        
+    //esta función toma la info de la DDBB y lo muestra
+    public function getFechaNacimientoAttribute( $value){
+        return Carbon::createFromTimestampMs($value)->format('d/m/Y H:i');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
