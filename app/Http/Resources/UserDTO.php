@@ -12,8 +12,14 @@ class UserDTO extends JsonResource
      *
      * @return array<string, mixed>
      */
-    public function toArray(Request $request): array
-    {
-        return parent::toArray($request);
+    public function toArray(Request $request) {
+        
+        return [
+            'idUsuario' => $this->id,
+            'nombreUusario' => $this->name,
+            'emailUsuario' => $this->email,
+            'rolUusario' => $this->role,
+            ];
+            
     }
 }

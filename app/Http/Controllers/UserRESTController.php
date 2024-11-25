@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserDTO;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class UserRESTController extends Controller
      */
     public function index()
     {
-        //
+        return UserDTO::collection(User::all());
     }
 
     /**
