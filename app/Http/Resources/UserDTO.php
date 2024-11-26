@@ -16,9 +16,9 @@ class UserDTO extends JsonResource
         
         return [
             'idUsuario' => $this->id,
-            'nombreUsusario' => $this->name,
+            'nombreUsuario' => $this->name,
             'emailUsuario' => $this->email,
-            'rolUusario' => $this->role,
+            'rolUsuario' => $this->role,
             ];
             
     }

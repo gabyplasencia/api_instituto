@@ -25,3 +25,5 @@ Route::apiResource('asignaturas', 'App\Http\Controllers\AsignaturaRESTController
 Route::apiResource('matriculas', 'App\Http\Controllers\MatriculaRESTController');
 
 Route::apiResource('users', 'App\Http\Controllers\UserRESTController');
+
+Route::apiResource('asignaturasmatriculas', 'App\Http\Controllers\AsignaturaMatriculaRESTController');

@@ -25,8 +25,8 @@ class UserRESTController extends Controller
     public function store(Request $request)
     {
         $user = User::create([
-            'email' => $request->email,
             'name' => $request->name,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
             ]);
         return new UserDTO($user);
